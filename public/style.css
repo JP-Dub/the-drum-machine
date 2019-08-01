@@ -3,7 +3,7 @@
 }
 
 body {
-  background: dimgray url('https://cdn.glitch.com/2ad3b99b-1743-411b-9f15-d1e290bbf674%2FBonus-Antique-Leather.jpg?v=1564696162149')no-repeat top;
+  background: dimgray url('https://cdn.glitch.com/2ad3b99b-1743-411b-9f15-d1e290bbf674%2FBonus-Antique-Leather.jpg?v=1564696162149')cover top;
 }
 
 #drum-machine {

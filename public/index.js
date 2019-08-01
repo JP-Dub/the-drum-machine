@@ -98,7 +98,7 @@ class Drum_Machine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display : "Drum Machine 2018",
+      display : "Drum Machine 2019",
       button  : ""
     }
     
@@ -125,7 +125,7 @@ class Drum_Machine extends React.Component {
     this.setState({ 
       display: keypad[value].id
     });
-    this.displayTimer = setInterval(() => this.setState({display: 'Drum Machine 2018'}), 1500);
+    this.displayTimer = setInterval(() => this.setState({display: 'Drum Machine 2019'}), 1500);
   }
   
   keydownEvent(event) {
