@@ -8,7 +8,7 @@ module.exports = {
    entry: './public/index.js',
    output: {
       path: path.join(__dirname, './dist'),
-      filename: '[name].bundle.js',
+      filename: '/bundle.js',
       publicPath: '/'
    },
    module: {
@@ -46,8 +46,5 @@ module.exports = {
          showErrors: true,
          cache : true
       }),
-      // new webpack.HotModuleReplacementPlugin({
-      //    multiStep: false
-      // })
    ]
 }

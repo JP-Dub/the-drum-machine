@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
+// import './public/style.css';
 
 let keypad = { 
   Q: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_CB-02.mp3?1539193866341',

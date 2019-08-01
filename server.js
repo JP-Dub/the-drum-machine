@@ -1,17 +1,15 @@
-// server.js
-// where your node app starts
+const express = require('express'),
+      webpack = require('webpack'),
+      webpackConfig = require('./webpack.config'),
+      compiler      = webpack(webpackConfig);	
 
-// init project
-const express = require('express');
 const app = express();
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
-// http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
-// http://expressjs.com/en/starter/basic-routing.html
+app.use(compiler);
+
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
