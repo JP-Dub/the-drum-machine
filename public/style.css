@@ -3,7 +3,7 @@
 }
 
 body {
-  background: dimgray url('https://cdn.glitch.com/2ad3b99b-1743-411b-9f15-d1e290bbf674%2FBonus-Antique-Leather.jpg?v=1564696162149')cover top;
+  background: dimgray url('https://cdn.glitch.com/2ad3b99b-1743-411b-9f15-d1e290bbf674%2FBonus-Antique-Leather.jpg?v=1564696162149')top/cover;
 }
 
 #drum-machine {
@@ -22,12 +22,6 @@ body {
      -moz-box-shadow: 20px 18px 18px 2px #404040;
   box-shadow: 20px 18px 18px 2px #404040;
 }
-
-/* header {
-  width: 100%;
-  height: 43px;
-  border: 1px solid dimgray;
-} */
 
 #display {
   font-family: Quartz;
