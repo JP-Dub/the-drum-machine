@@ -1,10 +1,21 @@
 const express = require('express');
-      //webpack = require('webpack'),
-      //webpackConfig = require('./webpack.config');
-      //compiler      = webpack(webpackConfig);	
+
 
 const app = express();
 
+const webpackDevServer = require('./node_modules/webpack-dev-server/lib/Server'),
+	    webpackConfig = require('./webpack.config'),
+      webpack       = require('webpack'),
+	    compiler      = webpack(webpackConfig);	
+
+app.use(
+	require("webpack-dev-middleware")(
+    compiler, {
+      noInfo    : true,
+      publicPath: webpackConfig.output.publicPath	
+    }
+	)
+);
 
 app.use(express.static('public'));
 
