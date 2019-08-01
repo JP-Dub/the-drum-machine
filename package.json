@@ -2,9 +2,10 @@
   "name": "hello-express",
   "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
+  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack --config prod.config.js"
   },
   "dependencies": {
     "express": "^4.16.4",
