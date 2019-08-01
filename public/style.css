@@ -1,71 +1,125 @@
-/* styles */
-/* called by your view template */
-
 * {
-  box-sizing: border-box;
+  padding: 0;
 }
 
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-  margin: 2em;
+  background: dimgray url('https://9jpkma.bn.files.1drv.com/y4m5qHEfm403XGTOX0s9Vz4T2iE0uvt8TXAl8qsMv2w2N8d9Y-GroOU_Rp8mDxWwlRSPpQ5wJShEIK_reGEaNwvmTfC-EurAtv_T-7iOqNmLG71OLRvZrMUbJ9zU_TJpXH9SpChtoh3Rb0m_tLKfgVY3RrIGddPkFO63crg9sgjTXTGn4CO-zTmewWuSRGLowm0OufNFV8PaPBTf3DpJ5S_5Q?width=1500&height=1217&cropmode=none')no-repeat top;
 }
 
-h1 {
-  font-style: italic;
-  color: #373fff;
+#drum-machine {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px solid black;
+  width: 552px;
+  height: 414px;
+  background: dimgray url(https://9jpjma.bn.files.1drv.com/y4m1Mb8ZkkKq8gz0QnK_2ZIH--XOLPoTj4XHe_rx-VYWoTxfk7bEOVbDBYiDx6BKGV2WoxFH9YJ--OHGGeuU560aIN0L7mC98AnREAfdB4-aciRKufU-YEZ6MfucdKsZm1WYtIfkfYD11TVR2V6gaikQ1ycBrfiy6fTNir-ZIfnh5kXJ66-goWWYVlhFQWBPu9JlrLDygugRY-LNJ4TbUfOlA?width=552&height=414&cropmode=none)no-repeat center;
+  background-size: auto;
+  -webkit-box-shadow: 20px 18px 18px 2px #404040;
+     -moz-box-shadow: 20px 18px 18px 2px #404040;
+  box-shadow: 20px 18px 18px 2px #404040;
 }
 
-.bold {
-  font-weight: bold;
-}
-
-p {
-  max-width: 600px;
-}
-
-form {
-  margin-bottom: 25px;
-  padding: 15px;
-  background-color: cyan;
-  display: inline-block;
+/* header {
   width: 100%;
-  max-width: 340px;
-  border-radius: 3px;
-}
+  height: 43px;
+  border: 1px solid dimgray;
+} */
 
-input {
-  display: block;
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
+#display {
+  font-family: Quartz;
+  padding-top: 3.5px;
+  border: 1px solid dimgray;
+  width: 195.5px;
+  height: 19px;
+  color: white;
+/*   margin-top: 13px;  set when using <header>*/
+  margin-top: 57px;
+  margin-left: 135.5px;
+  text-align: center;
   font-size: 16px;
+  background-color: dimgray;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: -3px 2px 8px 2px inset black;
+     -moz-box-shadow: -3px 2px 8px 2px inset black;
+  box-shadow: -3px 2px 8px 2px inset black;
+}
+
+#tableLayout {
+  border: 1px solid dimgray;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 401px;
+  height: 305.5px;
+  margin-left: 135.5px;
+  margin-top: 10.5px;
+}
+
+table {
+  margin-top: 2px;
+  margin-left: 3.8px;
+  border-collapse: collapse;
+  width: 390px;
+  height: 298px;
+  outline-style: none;
+  -webkit-user-select: none; 
+     -moz-user-select: none; 
+      -ms-user-select: none;
+  user-select: none;
 }
 
 button {
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: lightgrey;
-  border: 1px solid grey;
-  box-shadow: 2px 2px teal;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: yellow;
+  color: black;
+  font-size: 20px;
+  margin-left: 6.7px;
+  background-color: #d9d9d9;
+  width: 116.5px;
+  height: 83px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 44px 20px inset #848484;
+     -moz-box-shadow: 0px 0px 44px 20px inset #848484;
+  box-shadow: 0px 0px 44px 20px inset #848484;
+  -webkit-user-select: none; 
+     -moz-user-select: none; 
+      -ms-user-select: none; 
+  user-select: none;
 }
 
 button:active {
-  box-shadow: none;
+  -webkit-transform: translate(-0.5px, 0.5px);
+     -moz-transform: translate(-0.5px, 0.5px);
+      -ms-transform: translate(-0.5px, 0.5px);
+       -o-transform: translate(-0.5px, 0.5px);
+  transform: translate(-0.5px, 0.5px);
+  color: #FFFCED;
 }
 
-li {
-  margin-bottom: 5px;
-}
+button:focus {
+  outline: none;
+} 
 
-footer {
-  margin-top: 50px;
-  padding-top: 25px;
-  border-top: 1px solid lightgrey;
+.active {
+    -webkit-box-shadow: 0px 0px 44px 20px inset #848484;
+     -moz-box-shadow: 0px 0px 44px 20px inset #848484;
+    -webkit-transform: translate(-0.8px, 0.5px);
+     -moz-transform: translate(-0.8px, 0.5px);
+      -ms-transform: translate(-0.8px, 0.5px);
+       -o-transform: translate(-0.8px, 0.5px);
+  transform: translate(-0.8px, 0.5px);
+  border-top: 0;
+  border-left: 0;
+  border-right: 2px solid #FFFCED;
+  border-bottom: 2px solid #FFFCED;
+    -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #FFFCED;
 }
