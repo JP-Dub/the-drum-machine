@@ -1,36 +1,5 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
-// import './public/style.css';
-
-let keypad = { 
-  Q: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_CB-02.mp3?1539193866341',
-       id: 'Cowbell'
-     },
-  W: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_HT-01.mp3?1539264122994',
-       id: 'Tom'
-     },
-  E: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_CY-04.mp3?1539263602186',
-       id: 'Cymbal'
-     },
-  A: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_OH-04.mp3?1539263544608',
-       id: 'HH Open'
-     },
-  S: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_CP-02.mp3?1539263723092',
-       id: 'Clap'
-     },
-  D: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_CH-12.mp3?1539263652161',
-       id: 'HH Closed'
-     },
-  Z: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_RS-02.mp3?1539193843063',
-       id: 'Rimshot'
-     },
-  X: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_SD-20.mp3?1539263471525', 
-       id: 'Snare'
-     },
-  C: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_BD%5Blong%5D-09.mp3?1539263828274', 
-       id: 'Kick'
-     }
-}
 
 // main component for display and drumpad
 class Drum_Machine extends React.Component {
@@ -92,7 +61,7 @@ class Drum_Machine extends React.Component {
   }
 };
 
-
+// error boundary component
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -112,6 +81,38 @@ class ErrorBoundary extends React.Component {
     return this.props.children;
   };
 };
+
+// data object for sound files
+const keypad = { 
+  Q: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_CB-02.mp3?1539193866341',
+       id: 'Cowbell'
+     },
+  W: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_HT-01.mp3?1539264122994',
+       id: 'Tom'
+     },
+  E: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_CY-04.mp3?1539263602186',
+       id: 'Cymbal'
+     },
+  A: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_OH-04.mp3?1539263544608',
+       id: 'HH Open'
+     },
+  S: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_CP-02.mp3?1539263723092',
+       id: 'Clap'
+     },
+  D: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_CH-12.mp3?1539263652161',
+       id: 'HH Closed'
+     },
+  Z: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_RS-02.mp3?1539193843063',
+       id: 'Rimshot'
+     },
+  X: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_SD-20.mp3?1539263471525', 
+       id: 'Snare'
+     },
+  C: { url: 'https://cdn.glitch.com/3489ddb5-8371-4dfc-beab-56327ba2e20d%2FE808_BD%5Blong%5D-09.mp3?1539263828274', 
+       id: 'Kick'
+     }
+};
+
 // converts Keypad obj to lowercase and adds hypen to any spaces between the words
 const modifyId = (id) => {
   return id.replace( /( )/g, '_').toLowerCase();
@@ -151,8 +152,7 @@ const Drumpad = (props) => {
     </div>    
     </ErrorBoundary>
   )
-} 
-
+}; 
 
 
 ReactDOM.render(<Drum_Machine />, document.getElementById("root"));
