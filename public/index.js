@@ -32,67 +32,6 @@ let keypad = {
      }
 }
 
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-  componentDidCatch(error, info) {
-    // Display fallback UI
-    this.setState({ hasError: true });
-    // log the error to console 
-    console.log(error, info);   
-  }
-  render() {
-    if (this.state.hasError) {
-      // You can render any custom fallback UI
-      return <h1>Um...Something went wrong.</h1>;
-    }
-    return this.props.children;
-  };
-};
-
-// converts Keypad obj to lowercase and adds hypen to any spaces between the words
-const modifyId = (id) => {
-  return id.replace( /( )/g, '_').toLowerCase();
-}
-
-// builds the drumpad buttons
-const Drumpad = (props) => {
-  let createTableData = function(arr) {
-    let table = arr.map((note, index) => {
-         let audioDb = keypad[note],
-             id = modifyId(audioDb.id); 
-             
-         return (
-           <td key={index}>
-             <button id={id} className='drum-pad' onClick={() => props.clickHandler(note)}>
-             <audio id={note} className='clip' src={audioDb.url} preload='true'>Your browser does not support the <code>audio</code> element</audio>{note}</button>
-           </td> 
-         );       
-    })
-  return (
-    <tr>
-      {table}
-    </tr>
-    );
-  }  
-  
-  return (
-    <ErrorBoundary>
-    <div id='tableLayout'>
-      <table>
-        <tbody>
-          {createTableData(['Q', 'W', 'E'])}
-          {createTableData(['A', 'S', 'D'])}
-          {createTableData(['Z', 'X', 'C'])}
-        </tbody>
-      </table>
-    </div>    
-    </ErrorBoundary>
-  )
-} 
-
 // main component for display and drumpad
 class Drum_Machine extends React.Component {
   constructor(props) {
@@ -151,6 +90,69 @@ class Drum_Machine extends React.Component {
     </ErrorBoundary>
     );
   }
+};
+
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  componentDidCatch(error, info) {
+    // Display fallback UI
+    this.setState({ hasError: true });
+    // log the error to console 
+    console.log(error, info);   
+  }
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Um...Something went wrong.</h1>;
+    }
+    return this.props.children;
+  };
+};
+// converts Keypad obj to lowercase and adds hypen to any spaces between the words
+const modifyId = (id) => {
+  return id.replace( /( )/g, '_').toLowerCase();
 }
+
+// builds the drumpad buttons
+const Drumpad = (props) => {
+  let createTableData = function(arr) {
+    let table = arr.map((note, index) => {
+         let audioDb = keypad[note],
+             id = modifyId(audioDb.id); 
+             
+         return (
+           <td key={index}>
+             <button id={id} className='drum-pad' onClick={() => props.clickHandler(note)}>
+             <audio id={note} className='clip' src={audioDb.url} preload='true'>Your browser does not support the <code>audio</code> element</audio>{note}</button>
+           </td> 
+         );       
+    })
+  return (
+    <tr>
+      {table}
+    </tr>
+    );
+  }  
+  
+  return (
+    <ErrorBoundary>
+    <div id='tableLayout'>
+      <table>
+        <tbody>
+          {createTableData(['Q', 'W', 'E'])}
+          {createTableData(['A', 'S', 'D'])}
+          {createTableData(['Z', 'X', 'C'])}
+        </tbody>
+      </table>
+    </div>    
+    </ErrorBoundary>
+  )
+} 
+
+
 
 ReactDOM.render(<Drum_Machine />, document.getElementById("root"));
