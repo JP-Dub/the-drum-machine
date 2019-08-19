@@ -1,7 +1,5 @@
-const express = require('express');
-
-
-const app = express();
+const express = require('express'),
+      app     = express();
 
 const webpackDevServer = require('./node_modules/webpack-dev-server/lib/Server'),
 	    webpackConfig = require('./webpack.config'),
